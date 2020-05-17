@@ -1,8 +1,0 @@
-categories:
-  - title: "Documentation enhancements"
-    labels:
-      - "Documentation :books:"
-template: |
-  ## What’s Changed
-
-  $CHANGES

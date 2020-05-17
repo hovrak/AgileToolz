@@ -15,7 +15,7 @@ $app->add(['ui'=>'hidden divider']);
 
 // form itself
 $app->add(new \atk4\login\RegisterForm())
-    ->setModel(new \toolz\Users($app->db));
+    ->setModel(new \toolz\Model\Users($app->db));
 
 // below the form - signup link
 $seg = $app->add(['ui'=>'secondary segment', 'class'=>['center aligned padded']], 'Segment');
