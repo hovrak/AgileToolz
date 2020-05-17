@@ -2,7 +2,7 @@
 namespace toolz;
 
 require '../vendor/autoload.php';
-require 'db.php';
+require '../db.php';
 
 $app = new App(false);
 

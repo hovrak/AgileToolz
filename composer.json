@@ -4,15 +4,13 @@
     "description": "Module for Agile UI", 
     "homepage": "https://github.com/mbtoolz",
     "license": "MIT",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "atk4/ui": "^2.0@dev",
         "atk4/login": "^2.0"
     },
     "autoload": {
       "psr-4": {
-        "": "App"
+        "toolz\\": "toolz"
       }
     }
 }

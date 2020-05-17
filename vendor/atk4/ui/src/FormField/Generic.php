@@ -93,6 +93,7 @@ class Generic extends View
     public function set($value = null, $junk = null)
     {
         if ($this->field) {
+            $value = $this->app->ui_persistence->typecastLoadField($this->field, $value);
             $this->field->set($value);
 
             return $this;
@@ -148,7 +149,7 @@ class Generic extends View
             $default['stopPropagation'] = $default;
         }
 
-        $this->on('change', '#'.$this->id.'_input', $expr, $default);
+        $this->on('change', '#' . $this->id . '_input', $expr, $default);
     }
 
     /**
@@ -161,7 +162,7 @@ class Generic extends View
      */
     public function jsInput($when = null, $action = null)
     {
-        return $this->js($when, $action, '#'.$this->id.'_input');
+        return $this->js($when, $action, '#' . $this->id . '_input');
     }
 
     /**

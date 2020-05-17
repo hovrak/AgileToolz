@@ -2,7 +2,7 @@
 namespace toolz;
 
 include '../vendor/autoload.php';
-include 'db.php';
+include '../db.php';
 
 use atk4\login\RoleAdmin;
 use \toolz\Model\Role;

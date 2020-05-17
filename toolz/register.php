@@ -2,7 +2,7 @@
 namespace toolz;
 
 include '../vendor/autoload.php';
-include 'db.php';
+include '../db.php';
 
 $app = new App(false, false, true); // App without authentication to be able to freely create new user
 
@@ -15,7 +15,7 @@ $app->add(['ui'=>'hidden divider']);
 
 // form itself
 $app->add(new \atk4\login\RegisterForm())
-    ->setModel(new \atk4\login\Model\User($app->db));
+    ->setModel(new \toolz\Users($app->db));
 
 // below the form - signup link
 $seg = $app->add(['ui'=>'secondary segment', 'class'=>['center aligned padded']], 'Segment');
