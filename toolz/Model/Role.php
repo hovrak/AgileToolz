@@ -1,0 +1,29 @@
+<?php
+namespace toolz\Model;
+
+use atk4\data\Model;
+
+use atk4\login\Feature\SetupModel;
+use atk4\login\Feature\UniqueFieldValue;
+
+class Role extends Model
+{
+    use SetupModel;
+    use UniqueFieldValue;
+
+    public $table = 'login_role';
+    public $caption = 'Role';
+
+    public function init()
+    {
+        parent::init();
+
+        $this->addField('name');
+
+        $this->hasMany('Users', [Users::class, 'our_field'=>'id', 'their_field'=>'role_id']);
+        $this->hasMany('AccessRules', [AccessRule::class, 'our_field'=>'id', 'their_field'=>'role_id']);
+
+        // traits
+        $this->setupRoleModel();
+    }
+}
