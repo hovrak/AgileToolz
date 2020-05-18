@@ -16,7 +16,7 @@ class App extends \atk4\ui\App
     public $auth;
     public $title = 'toolz';
 
-    public function __construct($interface = 'front', $no_db_connect = false, $no_authenticate = false)
+    public function __construct($interface = 'centered', $no_db_connect = false, $no_authenticate = false)
     {
         parent::__construct();
 
@@ -27,12 +27,13 @@ class App extends \atk4\ui\App
             $this->initLayout('Admin');
             $this->layout->leftMenu->addItem(['User Admin', 'icon'=>'users'], ['admin-users']);
             $this->layout->leftMenu->addItem(['Role Admin', 'icon'=>'tasks'], ['admin-roles']);
-            $this->layout->leftMenu->addItem(['Back to Demo Index', 'icon'=>'arrow left'], ['index']);
+            $this->layout->leftMenu->addItem(['Back to Index', 'icon'=>'arrow left'], ['../index']);
         } elseif ($interface == 'centered') {
             $this->initLayout('Centered');
         } else {
             $this->initLayout(new \atk4\login\Layout\Narrow());
         }
+
 
         if (!$no_db_connect) {
             $this->dbConnect($this->config['dsn']);

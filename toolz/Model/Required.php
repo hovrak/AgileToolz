@@ -3,13 +3,13 @@ namespace toolz\Model;
 
 use atk4\data\Model;
 
-use atk4\login\Feature\SetupModel;
-use atk4\login\Feature\UniqueFieldValue;
+//use atk4\login\Feature\SetupModel;
+//use atk4\login\Feature\UniqueFieldValue;
 
 class Required extends Model
 {
-    use SetupModel;
-    use UniqueFieldValue;
+    //use SetupModel;
+    //use UniqueFieldValue;
 
     public $table = 'ro';
     public $caption = 'Required';

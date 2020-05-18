@@ -10,7 +10,7 @@ $app = new App(false, false, true); // App without authentication to be able to 
 $c = $app->add('Columns');
 $c->addColumn(12)->add(['Header', 'Create New Account', 'size'=>2]);
 $c->addColumn(4)->add(['Button', 'Back', 'icon'=>'home', 'right floated tiny basic green'])
-    ->link(['index']);
+    ->link(['../index']);
 $app->add(['ui'=>'hidden divider']);
 
 // form itself
