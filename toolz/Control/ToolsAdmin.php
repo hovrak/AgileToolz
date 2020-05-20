@@ -4,20 +4,20 @@ namespace toolz\Control;
 use atk4\core\DebugTrait;
 use atk4\core\Exception;
 use atk4\data\Model;
-use atk4\ui\Grid;
+use atk4\ui\CRUD;
 use atk4\ui\Exception\NoRenderTree;
 use atk4\ui\View;
 
 /**
- * View for User administration.
- * Includes User association with Role.
+ * View for Tools administration.
+ * Includes Tool association with status, required.
  */
-class ToolsFront extends View
+class ToolsAdmin extends View
 {
     use DebugTrait;
 
-    /** @var grid */
-    public $grid = null;
+    /** @var crud */
+    public $crud = null;
 
     /**
      * Initialization.
@@ -25,7 +25,7 @@ class ToolsFront extends View
     public function init()
     {
         parent::init();
-        $this->grid = $this->add('Grid');
+        $this->crud = $this->add('CRUD');
     }
 
     /**
@@ -45,17 +45,17 @@ class ToolsFront extends View
         //$tools->getAction('add')->system = true;
 
         // set model for CRUD
-        $this->grid->setModel($tools);
+        $this->crud->setModel($tools);
 
         // Add new table column used for actions
         //$a = $this->crud->table->addColumn(null, ['ActionButtons', 'caption'=>'']);
 
-        $this->grid->addQuickSearch(['description'], true);
-        $this->grid->ipp = 5;
+        $this->crud->addQuickSearch(['description'], true);
+        $this->crud->ipp = 5;
         
-        $this->grid->addDecorator("description", ["Text"]);
+        $this->crud->addDecorator("description", ["Text"]);
 
-        $table = $this->grid->table->addHook('beforeRow',function($table){
+        $table = $this->crud->table->addHook('beforeRow',function($table){
             if ($table->current_row['status_id']=='1'){
                 $table->t_row->template[0] = "\n  <tr class=\"green\" data-id=\"";
         

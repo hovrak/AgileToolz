@@ -18,7 +18,7 @@ class Status extends Model
     {
         parent::init();
 
-        $this->addField('status');
+        $this->addField('name');
 
         $this->hasMany('Tools', [Tools::class, 'our_field'=>'id', 'their_field'=>'status_id']);
         //$this->hasMany('AccessRules', [AccessRule::class, 'our_field'=>'id', 'their_field'=>'role_id']);

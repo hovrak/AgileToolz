@@ -15,3 +15,4 @@ $app->add(new \toolz\Control\ToolsFront())
 
 $app->add(['ui'=>'divider']);
 $app->add(['Button', 'Admin', 'icon'=>'lock open'])->link(['toolz/admin-users']);
+$app->add(['Button', 'Log-in', 'icon'=>'sign in'])->link(['toolz/login']);

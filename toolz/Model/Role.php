@@ -21,7 +21,7 @@ class Role extends Model
         $this->addField('name');
 
         $this->hasMany('Users', [Users::class, 'our_field'=>'id', 'their_field'=>'role_id']);
-        //$this->hasMany('AccessRules', [AccessRule::class, 'our_field'=>'id', 'their_field'=>'role_id']);
+        $this->hasMany('AccessRules', [AccessRule::class, 'our_field'=>'id', 'their_field'=>'role_id']);
 
         // traits
         $this->setupRoleModel();
